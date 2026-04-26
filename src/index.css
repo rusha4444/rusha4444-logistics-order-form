@@ -1,7 +1,6 @@
 /* index.css - ONLY global file. Used for CSS reset and base font.
    The assignment says "no global CSS" for component styles,
    but we need this one for browser reset. */
-
 *, *::before, *::after {
   box-sizing: border-box; /* Makes width/height include padding & border */
   margin: 0;
