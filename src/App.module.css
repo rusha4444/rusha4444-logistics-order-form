@@ -1,0 +1,133 @@
+/* App.module.css
+   CSS Modules work by renaming classes to unique names like "App_header__xK2p1"
+   So styles in this file NEVER clash with styles in other files.
+   You use them as: className={styles.header} in JSX */
+
+.appWrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---- Header ---- */
+.header {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  padding: 0 24px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.headerInner {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logoIcon {
+  font-size: 1.6rem;
+}
+
+.logoText {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+}
+
+.logoBadge {
+  font-size: 0.7rem;
+  font-weight: 600;
+  background: #4f46e5;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.headerRight {
+  display: flex;
+  align-items: center;
+}
+
+.headerTag {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+/* ---- Main Two-Column Layout ---- */
+.main {
+  flex: 1;
+  display: grid;
+  /* Two equal columns on desktop */
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 24px 16px;
+  align-items: start;
+}
+
+.leftPanel {
+  padding-right: 12px;
+}
+
+.rightPanel {
+  padding-left: 12px;
+  /* Sticky so preview stays visible while scrolling the form */
+  position: sticky;
+  top: 88px;
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
+}
+
+/* ---- Tablet (≤ 900px): Stack vertically ---- */
+@media (max-width: 900px) {
+  .main {
+    grid-template-columns: 1fr;  /* Single column */
+    padding: 16px;
+  }
+
+  .leftPanel {
+    padding-right: 0;
+  }
+
+  .rightPanel {
+    padding-left: 0;
+    position: static;    /* No more sticky on mobile */
+    max-height: none;
+  }
+}
+
+/* ---- Mobile (≤ 480px) ---- */
+@media (max-width: 480px) {
+  .header {
+    height: 56px;
+    padding: 0 16px;
+  }
+
+  .logoText {
+    font-size: 1.2rem;
+  }
+
+  .headerTag {
+    display: none;
+  }
+}

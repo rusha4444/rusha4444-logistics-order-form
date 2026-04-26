@@ -1,0 +1,79 @@
+/* PackageForm.module.css */
+
+.card {
+  background: #f8faff;
+  border: 1.5px solid #e0e7ff;
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: box-shadow 0.2s;
+}
+
+.card:hover {
+  box-shadow: 0 2px 12px rgba(79, 70, 229, 0.08);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.packageTitle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.packageIcon {
+  font-size: 1.1rem;
+}
+
+.packageLabel {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #4338ca;
+}
+
+.removeBtn {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #ef4444;
+  background: #fff1f1;
+  border: 1.5px solid #fecaca;
+  border-radius: 6px;
+  padding: 4px 10px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.removeBtn:hover {
+  background: #fecaca;
+  color: #b91c1c;
+}
+
+/* 3 columns for dimensions */
+.dimRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+/* 2 columns for weight + value */
+.twoCol {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.fullRow {
+  width: 100%;
+}
+
+@media (max-width: 480px) {
+  .dimRow {
+    grid-template-columns: 1fr 1fr;
+  }
+}
